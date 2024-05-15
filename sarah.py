@@ -41,36 +41,46 @@ def budget():
     print(f"the have {total} dollars to spend on groceries, phone, living needs,savings, etc per month ")
 
 def numberguessing():
+    import random
+    easy = [1,2,3,4,5,6,7,8,9,10]
+    medium = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]
+    hard = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
     l = input("pick a level: hard ,medium or easy")
     if l == "easy":
-        print("pick a number between 1 - 10")
-        n = 2
-        n = float(n)
+        n = input("pick a number between 1 - 10")
+        
         for n in range(1,10):
-            if n == "2":
+            round1 = random.choice(easy)
+            while n  == round1:
                 print("you got it!")
-            else:
+                break
+            if n != round1:
                 print("not quite")
+                break
 
     elif l == "medium":
-        print("pick a number between 1-50")
-        nn = 10
-        nn = float(nn)
+        nn = input("pick a number between 1-50")
+       
         for nn in range(1,50):
-            if nn == "10":
-                print("you got it!")
-            else:
+            round2 = random.choice(medium)
+            while nn == round2:
+                 print("you got it!")
+                 break
+            if nn != round2:
                 print("not quite")
+                break
 
                 
     elif l == "hard":
-        print("pick a number between 1-100")
-        nnn = 57
-        nnn = float(nnn)
+        nnn = input("pick a number between 1-100")
+        
         for nnn in range(1,100):
-            if nnn == "57":
+            round3 = random.choice(hard)
+            while nnn == round3:
                 print("you got it!")
-            else:
+                break
+            if nnn !=round3:
                 print("not quite")
-     
+                break
+numberguessing()     
     
