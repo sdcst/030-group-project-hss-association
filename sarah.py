@@ -41,46 +41,49 @@ def budget():
     print(f"the have {total} dollars to spend on groceries, phone, living needs,savings, etc per month ")
 
 def numberguessing():
-    import random
-    easy = [1,2,3,4,5,6,7,8,9,10]
-    medium = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]
-    hard = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
+    import random   
+
     l = input("pick a level: hard ,medium or easy")
     if l == "easy":
-        n = input("pick a number between 1 - 10")
-        
-        for n in range(1,10):
-            round1 = random.choice(easy)
-            while n  == round1:
-                print("you got it!")
-                break
-            if n != round1:
-                print("not quite")
-                break
-
+        max_number = 10
+        attempts = 5
     elif l == "medium":
-        nn = input("pick a number between 1-50")
-       
-        for nn in range(1,50):
-            round2 = random.choice(medium)
-            while nn == round2:
-                 print("you got it!")
-                 break
-            if nn != round2:
-                print("not quite")
-                break
-
-                
+        max_number = 50
+        attempts = 7
     elif l == "hard":
-        nnn = input("pick a number between 1-100")
+        max_number = 100
+        attempts = 10
+    else:
+        print("invalid level")
+        return
+
+    secret_number = random.randint(1, max_number)
+    print(f"welcome to the {l} round of the number guessing game")
+    print(f"I am thinking of a number between 1 and {max_number} you have{attempts} attempts")
+
+    for attempt in range (1, attempts + 1):
+        guess = int(input("enter your guess:"))
+        if guess < secret_number:
+            print("oops! too low, try again")
+        elif guess > secret_number:
+            print("oops! too high , try again")
+        else:
+            print(f"Yay! you guessed the correct number, {secret_number} was the answer")
+            return
+
+    print(f"sorry you run out of attempts the correct answer was {secret_number}")
+
+    print("welcome to the number guessing game")
+    while True:
+        print("Choose your difficulty level:easy,medium,hard")
+        l = input("enter your level of choice:").lower()
+        if l in ["easy", " medium", "hard"]:
+            numberguessing()
+        play_again = input("do you want to play again? yes/no?")
         
-        for nnn in range(1,100):
-            round3 = random.choice(hard)
-            while nnn == round3:
-                print("you got it!")
-                break
-            if nnn !=round3:
-                print("not quite")
-                break
-numberguessing()     
-    
+        if play_again != "yes":
+            print("thanks for playing!")
+            break
+        else:
+            print("invalid choice. Please choose easy, medium,hard.")
+numberguessing()
