@@ -1,6 +1,18 @@
 
 
 def circle_area():
+        
+        def replay():
+                REPLAY = ""
+                while REPLAY != "REPLAY" and REPLAY != "EXIT":
+                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+                        if REPLAY == "REPLAY":
+                                pass
+                        elif REPLAY == "EXIT":
+                                return None
+                        else:
+                                print("Invalid Input...")
+                return True
 
         import math
 
@@ -29,8 +41,27 @@ def circle_area():
                                 print("Not a valid input")
                                 print("Try again")
 
+        replayAnswer = replay()
+        if replayAnswer == True:
+                print("\n")
+                circle_area()
+        else:
+                print("\n")
+                instructions()
 
 def right_triangle_hypotenuse_finder():
+        
+        def replay():
+                REPLAY = ""
+                while REPLAY != "REPLAY" and REPLAY != "EXIT":
+                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+                        if REPLAY == "REPLAY":
+                                pass
+                        elif REPLAY == "EXIT":
+                                return None
+                        else:
+                                print("Invalid Input...")
+                return True
         
         import math
 
@@ -68,9 +99,29 @@ def right_triangle_hypotenuse_finder():
         print('√'+c2,'=', cs)
         print("---Answer---")
         print('your right triangle hypotenuse is',c)
-                
-def unit_conversion():
 
+        replayAnswer = replay()
+        if replayAnswer == True:
+                print("\n")
+                right_triangle_hypotenuse_finder()
+        else:
+                print("\n")
+                instructions()
+
+def unit_conversion():
+        
+        def replay():
+                REPLAY = ""
+                while REPLAY != "REPLAY" and REPLAY != "EXIT":
+                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+                        if REPLAY == "REPLAY":
+                                pass
+                        elif REPLAY == "EXIT":
+                                return None
+                        else:
+                                print("Invalid Input...")
+                return True
+        
         num = 0
         unit1 = ''
         U1 = False
@@ -125,6 +176,8 @@ def unit_conversion():
                 
         if unit1 == unit2:
                 print('what.')
+
+        #-------cm---------------------------------------------------               
         
         if unit1 == 'cm' and unit2 =='mm':
                 unit3 = num * 10
@@ -144,6 +197,8 @@ def unit_conversion():
                 num1 = str(unit3)
                 print(num+unit1,'is',num1+unit2)
 
+        #-------mm---------------------------------------------------
+
         if unit1 == 'mm' and unit2 =='cm':
                 unit3 = num / 10
                 num = str(num)
@@ -161,6 +216,8 @@ def unit_conversion():
                 num = str(num)
                 num1 = str(unit3)
                 print(num+unit1,'is',num1+unit2)
+
+        #-------m---------------------------------------------------                
 
         if unit1 == 'm' and unit2 =='cm':
                 unit3 = num * 100
@@ -180,6 +237,8 @@ def unit_conversion():
                 num1 = str(unit3)
                 print(num+unit1,'is',num1+unit2)
 
+        #-------in---------------------------------------------------
+
         if unit1 == 'in' and unit2 =='cm':
                 unit3 = num * 2.54
                 num = str(num)
@@ -197,17 +256,28 @@ def unit_conversion():
                 num = str(num)
                 num1 = str(unit3)
                 print(num+unit1,'is',num1+unit2)
-
         
-
-               
-               
-
-        
-unit_conversion()
-   
+                replayAnswer = replay()
+        if replayAnswer == True:
+                print("\n")
+                circle_area()
+        else:
+                print("\n")
+                unit_conversion()
                 
 def distance():
+
+        def replay():
+                REPLAY = ""
+                while REPLAY != "REPLAY" and REPLAY != "EXIT":
+                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+                        if REPLAY == "REPLAY":
+                                pass
+                        elif REPLAY == "EXIT":
+                                return None
+                        else:
+                                print("Invalid Input...")
+                return True
 
         from fractions import Fraction
 
@@ -239,6 +309,14 @@ def distance():
                         if t == 0:
                                 print("Not a valid input")
                                 print("Try again")
+
+                replayAnswer = replay()
+                if replayAnswer == True:
+                        print("\n")
+                        distance()
+                else:
+                        print("\n")
+                        instructions()
 
 
         
