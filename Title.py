@@ -31,7 +31,7 @@ while a != True:
         try:
                 i = int(input("Input your number here: "))
                 if i == 1:
-                        #  
+                        #fuctions here  
                         a == True      
                 if i == 2:
                         authors()  
