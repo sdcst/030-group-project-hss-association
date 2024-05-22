@@ -1,27 +1,99 @@
 def instructions():
-    # Will display instructions
-    # input p[loarameters: none needed
-    # output parameters: None
-    # Author:
-    # Modified:
-    print('instructions are here')
+    print('Welcome to the instructions! \nIn here you will be able to get a preview of all 13 functions available to you to use. \nWhen done reading all of the options, you may chose a function to use why entering \"CHOOSE\". ')
+    print("\n")
+    print("➣ Volume of cube: \nThis function will help you determine the volume of your cube by giving it the mesurements in meters.")
+    print("\n")
+    print("➣ Grocery taxes: \n This function will help you calcute the subtotal, GST, PSt and total.")
+    print("\n")
+    print("➣ Compound Interest: \nThis function will help you calculate your compound interest.")
+    print("\n")
+    print("➣ BlackJack: \nThis is a game of BlackJack.\nThe rule to win is have a higher hand value than your opponent, without going over 21.\nPlayers are dealt two cards and can then choose to “hit” (receive additional cards) or “stand” (keep their current hand). \nYour opponent also receives two cards, but only one is face up.\nIf the player’s hand exceeds 21, they “bust” and lose the game. \nIf the opponent busts, player wins. If neither the player nor the opponent busts, the player with the highest hand value closest to 21, wins.")
+    print("\n")
+    print("➣ Area of a rectangle: \nThis function will help you determine the area of a rectangle.")
+    print("\n")
+    print("➣ Area of a triangle: \nThis function will help you determine the area of a triangle.")
+    print("\n")
+    print("➣ Volume of cylinder:\nThis function will help you determine the volume of a cylinder.")
+    print("\n")
+    print("➣ Budgeting:\nThis function will help you determine your monthly budget to spend.")
+    print("\n")
+    print("➣ Number Guessing:\nThis is a game of number guessing. \nThere are three difficulty levels: easy, medium and hard.\nThere will be a random number for you to guess.")
+    print("\n")
+    print("➣ Area of Circle:\nThis function will help you determine the area of a circle.")
+    print("\n")
+    print("➣ hypotenuse finder:\nThis function will help you determing the hypotenuse of a triangle. ")
+    print("\n")
+    print("➣ Speed Finder:\nThis function will help you determine the speed of your travelling subject.")
+    print("\n")
+    ANSWER = input("")
     return None
-
+instructions()
 def cubeVolume():
-    side = input("Enter the lenght of the cube in meters: ")
-    side = float(side)
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+    LC = False
+    while LC != True:
+        side = input("Enter the lenght of the cube in meters: ")
+        try:
+            side = float(side)
+            LC = True
+        except:
+            print("Invalid input...try again...")
     v = side**3
     print(f'The volume of that cube is {v} m.')
 
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        cubeVolume()
+    else:
+        print("\n")
+        instructions()
+
 def grocerytaxes():
-    n = input("How many items did you purchase? ")
-    n = int(n)
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+
+    NI = False
+    while NI != True:
+        n = input("How many items did you purchase? ")
+        try:
+            n = int(n)
+            NI = True
+        except:
+            print("Invalid input... try again...")
+
     pricee = 0
     for i in range(n):
-        price = input("Enter the price of your item(s): ")
-        price = float(price)
-        subtotal = pricee + price
-        pricee = price
+        PI = False
+        while PI != True:
+            price = input("Enter the price of your item(s): ")
+            try:
+                price = float(price)
+                subtotal = pricee + price
+                pricee = price
+                PI = True
+            except:
+                print("Invalid input... try again...")
+
     subtotal = round(subtotal,2)
     pst = subtotal*0.07
     pst = round(pst,2)
@@ -29,17 +101,70 @@ def grocerytaxes():
     gst = round(gst,2)
     total = subtotal+pst+gst
     print(f"Your subtotal is ${subtotal} \nThe PST taxe is ${pst} \nThe GST taxe is ${gst} \nWhich brings your total to be ${total}")
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        grocerytaxes()
+    else:
+        print("\n")
+        instructions()
 
 def compoundinterest():
-    P = input("What is your intial balance? ")
-    P = float(P)
-    r = input("What is the interest rate, enter it in as a % (ex: 7% => 7): ")
-    r = float(r)
-    r = r/100
-    n = input("How many times is it compounded in per year? (ex: monthtly => 12) ")
-    n = float(n)
-    t = input("How many years will it be in compound? ")
-    t = float(t)
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+    IB = False
+    while IB != True:
+        P = input("What is your intial balance? ")
+        try:
+            P = float(P)
+            IB = True
+        except:
+            print("Invalid input... try again...")
+
+    print("\n")
+    IR = False
+    while IR != True:
+        r = input("What is the interest rate, enter it in as a % (ex: 7% => 7): ")
+        try:
+            r = float(r)
+            r = r/100
+            IR = True
+        except:
+            print("Invalid input... try again...")
+
+    print("\n")
+
+    CY = False
+    while CY != True:
+        n = input("How many times is it compounded in per year? (ex: monthtly => 12) ")
+        try:
+            n = float(n)
+            CY = True
+        except:
+            print("Invalid input... try again...")
+
+    print("\n")
+
+    YC = False
+    while YC != True:
+        t = input("How many years will it be in compound? ")
+        try:
+            t = float(t)
+            YC = True
+        except:
+            print("Invalid input... try again...")
+
+    print("\n")
+
     def calculateinterest(P,r,n,t):
         A = P*(1 + r/n)**(n*t)
         A = round(A,2)
@@ -48,7 +173,14 @@ def compoundinterest():
     A = calculateinterest(P,r,n,t) 
     print(f"After {t} of years, your intial money will compound to ${A}.")
 
-
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        compoundinterest()
+    else:
+        print("\n")
+        instructions()
+        
 def BlackJack():
     def replay():
         REPLAY = ""
@@ -121,19 +253,7 @@ def BlackJack():
                     if replayAnswer == True:
                         BlackJack()
                     else:
-                        instructions()
-                    """REPLAY = ""
-                    while REPLAY != "REPLAY" and REPLAY != "EXIT":
-                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
-                        if REPLAY == "REPLAY":
-                            BlackJack()
-                            break
-                        elif REPLAY == "EXIT":
-                            instructions()
-                            return None
-                        else:
-                            print("Invalid Input...")
-                    """                            
+                        instructions()                          
             elif answer == "STAY":
                     print(f"The sum of your cards is {SUM}. Let's see what your opponent got. \n")
                     break
@@ -173,7 +293,3 @@ def BlackJack():
             BlackJack()
         else:
             instructions()
-
-
-BlackJack()
-
