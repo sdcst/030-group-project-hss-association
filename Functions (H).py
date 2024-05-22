@@ -69,10 +69,11 @@ def right_triangle_hypotenuse_finder():
         print("---Answer---")
         print('your right triangle hypotenuse is',c)
                 
-#def unit_conversion():
+def unit_conversion():
 
         num = 0
         unit1 = ''
+        U1 = False
         unit2 = ''
         a = 0
 
@@ -86,55 +87,126 @@ def right_triangle_hypotenuse_finder():
                         print("Please try again!")
                         print("-----------------")
         
-        while unit1 == "":
+        while U1 != True:
                 
                 try:
                         print("What unit of measurement did you enter?")
                         print("pick one of the following:")
-                        print("(cm/mm/m/km)")
-                        unit1 = input(': ')
-                        unit1 == 'cm' or unit1 == 'mm' or unit1 == 'm' or unit1 == 'km'
+                        print("(cm/mm/m/in)")
+                        U11 = False
+                        while U11 != True:
+                                unit1 = input(': ')
+                                if unit1 == 'cm' or unit1 == 'mm' or unit1 == 'm' or unit1 == 'in':
+                                        U11 = True
+                                        U1 = True
                         continue
 
                 except:
                                 print(unit1,"is not a vaild input")
                                 print("Please try again!")
                                 print("-----------------")
-        
-        while unit2 == "":
+        U2 = False
+        while U2 != True:
                 
                 try:
                         print("What unit of measurement do you want to convert to?")
                         print("pick one of the following:")
-                        print("(cm/mm/m/km)")
-                        unit2 = input(': ')
-                
-                        if unit1 == unit2:
-                                print('what.')
-                        if unit1 == 'cm' and unit2 =='mm':
-                                unit3 = num * 10
-                                print('your new unit is',num+unit2)
-                                
-
-
-
+                        print("(cm/mm/m/in)")
+                        U22 = False
+                        while U22 != True:
+                                unit2 = input(': ')
+                                if unit2 == 'cm' or unit2 == 'mm' or unit2 == 'm' or unit2 == 'in':
+                                        U22 = True
+                                        U2 = True
                 except:
-                        if unit2 != 'cm' or unit2 != 'mm' or unit2 != 'm' or unit2 != 'km':
+                        print(unit2,"is not a vaild input")
+                        print("Please try again!")
+                        print("-----------------")
+                
+        if unit1 == unit2:
+                print('what.')
+        
+        if unit1 == 'cm' and unit2 =='mm':
+                unit3 = num * 10
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
 
-                                print(unit2,"is not a vaild input")
-                                print("Please try again!")
-                                print("-----------------")
+        if unit1 == 'cm' and unit2 == 'm':
+                unit3 = num / 100
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'cm' and unit2 == 'in':
+                unit3 = num / 2.54
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'mm' and unit2 =='cm':
+                unit3 = num / 10
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'mm' and unit2 =='m':
+                unit3 = num / 1000
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'mm' and unit2 == 'in':
+                unit3 = num / 25.4
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'm' and unit2 =='cm':
+                unit3 = num * 100
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'm' and unit2 =='mm':
+                unit3 = num * 1000
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'm' and unit2 == 'in':
+                unit3 = num * 39.37
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'in' and unit2 =='cm':
+                unit3 = num * 2.54
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'in' and unit2 =='mm':
+                unit3 = num * 25.4
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'in' and unit2 == 'm':
+                unit3 = num / 39.37
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
 
         
 
+               
+               
+
+        
+unit_conversion()
+   
                 
-
-                
-                
-
-
-
-
 def distance():
 
         from fractions import Fraction

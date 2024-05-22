@@ -1,3 +1,7 @@
+import TA
+TitleScreen()
+
+
 
 
 i = 0
