@@ -1,4 +1,3 @@
-from sophie import instructions
 
 def arearectangle():
     def replay():
@@ -86,7 +85,6 @@ def volumecylinder():
         print("\n")
         instructions()
 
-  
 
 def budget():
 
@@ -189,6 +187,5 @@ def numberguessing():
         print("\n")
         instructions()
 
-budget()
         
         

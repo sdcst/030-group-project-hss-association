@@ -1,4 +1,4 @@
-from sophie import instructions
+
 
 def cubeVolume():
     def replay():

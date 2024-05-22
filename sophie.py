@@ -1,33 +1,321 @@
-def instructions():
-    print('Welcome to the instructions! \nIn here you will be able to get a preview of all 13 functions available to you to use. \nWhen done reading all of the options, you may chose a function to use why entering \"CHOOSE\". ')
-    print("\n")
-    print("➣ Volume of cube: \nThis function will help you determine the volume of your cube by giving it the mesurements in meters.")
-    print("\n")
-    print("➣ Grocery taxes: \n This function will help you calcute the subtotal, GST, PSt and total.")
-    print("\n")
-    print("➣ Compound Interest: \nThis function will help you calculate your compound interest.")
-    print("\n")
-    print("➣ BlackJack: \nThis is a game of BlackJack.\nThe rule to win is have a higher hand value than your opponent, without going over 21.\nPlayers are dealt two cards and can then choose to “hit” (receive additional cards) or “stand” (keep their current hand). \nYour opponent also receives two cards, but only one is face up.\nIf the player’s hand exceeds 21, they “bust” and lose the game. \nIf the opponent busts, player wins. If neither the player nor the opponent busts, the player with the highest hand value closest to 21, wins.")
-    print("\n")
-    print("➣ Area of a rectangle: \nThis function will help you determine the area of a rectangle.")
-    print("\n")
-    print("➣ Area of a triangle: \nThis function will help you determine the area of a triangle.")
-    print("\n")
-    print("➣ Volume of cylinder:\nThis function will help you determine the volume of a cylinder.")
-    print("\n")
-    print("➣ Budgeting:\nThis function will help you determine your monthly budget to spend.")
-    print("\n")
-    print("➣ Number Guessing:\nThis is a game of number guessing. \nThere are three difficulty levels: easy, medium and hard.\nThere will be a random number for you to guess.")
-    print("\n")
-    print("➣ Area of Circle:\nThis function will help you determine the area of a circle.")
-    print("\n")
-    print("➣ hypotenuse finder:\nThis function will help you determing the hypotenuse of a triangle. ")
-    print("\n")
-    print("➣ Speed Finder:\nThis function will help you determine the speed of your travelling subject.")
-    print("\n")
-    ANSWER = input("")
-    return None
-instructions()
+def circle_area():
+        
+        def replay():
+                REPLAY = ""
+                while REPLAY != "REPLAY" and REPLAY != "EXIT":
+                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+                        if REPLAY == "REPLAY":
+                                pass
+                        elif REPLAY == "EXIT":
+                                return None
+                        else:
+                                print("Invalid Input...")
+                return True
+
+        import math
+
+        d = 0
+        pi = math.pi
+
+        while d == 0:
+                try:
+                        d = float(input("Please input a your diameter: "))
+                        r = d/2
+                        r2 = math.pow(r,2)
+                        a = r2 * pi
+                        a = round(a,2)
+
+                        r = str(r)
+                
+                        print("---Getting the Radius---")
+                        print(d,'÷ 2 =', r)
+                        print("---Getting the Area---")
+                        print(r+"^2 * π")
+                        print("---Answer---")
+                        print(a,"is your area!")
+
+                except:
+                        if d == 0:
+                                print("Not a valid input")
+                                print("Try again")
+
+        replayAnswer = replay()
+        if replayAnswer == True:
+                print("\n")
+                circle_area()
+        else:
+                print("\n")
+                instructions()
+
+def right_triangle_hypotenuse_finder():
+        
+        def replay():
+                REPLAY = ""
+                while REPLAY != "REPLAY" and REPLAY != "EXIT":
+                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+                        if REPLAY == "REPLAY":
+                                pass
+                        elif REPLAY == "EXIT":
+                                return None
+                        else:
+                                print("Invalid Input...")
+                return True
+        
+        import math
+
+        a = 0
+        b = 0
+
+        while a == 0:
+                try:
+                        a = int(input("Please input your a side of the right triangle: "))
+                except:
+                        print("Invaild input")
+                        print("Please try again!")
+        while b == 0:        
+                try:
+                        b = int(input("Please input your b side of the right triangle: "))
+               
+                except:
+                        print("Invaild input")
+                        print("Please try again!")
+               
+        a2 = math.pow(a,2)
+        b2 = math.pow(b,2)
+
+        c2 = a2 + b2
+        cs = math.sqrt(c2)
+        c = round(cs,2)
+        
+        a = str(a)
+        b = str(b)
+        c2 = str(c2)
+
+        print("---a^2 + b^2 = c^2---")
+        print(a+"^2 +",b+"^2 =",c2)
+        print("---Square rooting c^2---")
+        print('√'+c2,'=', cs)
+        print("---Answer---")
+        print('your right triangle hypotenuse is',c)
+
+        replayAnswer = replay()
+        if replayAnswer == True:
+                print("\n")
+                right_triangle_hypotenuse_finder()
+        else:
+                print("\n")
+                instructions()
+
+def unit_conversion():
+        
+        def replay():
+                REPLAY = ""
+                while REPLAY != "REPLAY" and REPLAY != "EXIT":
+                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+                        if REPLAY == "REPLAY":
+                                pass
+                        elif REPLAY == "EXIT":
+                                return None
+                        else:
+                                print("Invalid Input...")
+                return True
+        
+        num = 0
+        unit1 = ''
+        U1 = False
+        unit2 = ''
+        a = 0
+
+        while num == 0:
+                
+                try:
+                        num = int(input("Please input your number: "))
+                        print("-----------------")
+                except:
+                        print("Invaild input")
+                        print("Please try again!")
+                        print("-----------------")
+        
+        while U1 != True:
+                
+                try:
+                        print("What unit of measurement did you enter?")
+                        print("pick one of the following:")
+                        print("(cm/mm/m/in)")
+                        U11 = False
+                        while U11 != True:
+                                unit1 = input(': ')
+                                if unit1 == 'cm' or unit1 == 'mm' or unit1 == 'm' or unit1 == 'in':
+                                        U11 = True
+                                        U1 = True
+                        continue
+
+                except:
+                                print(unit1,"is not a vaild input")
+                                print("Please try again!")
+                                print("-----------------")
+        U2 = False
+        while U2 != True:
+                
+                try:
+                        print("What unit of measurement do you want to convert to?")
+                        print("pick one of the following:")
+                        print("(cm/mm/m/in)")
+                        U22 = False
+                        while U22 != True:
+                                unit2 = input(': ')
+                                if unit2 == 'cm' or unit2 == 'mm' or unit2 == 'm' or unit2 == 'in':
+                                        U22 = True
+                                        U2 = True
+                except:
+                        print(unit2,"is not a vaild input")
+                        print("Please try again!")
+                        print("-----------------")
+                
+        if unit1 == unit2:
+                print('what.')
+
+        #-------cm---------------------------------------------------               
+        
+        if unit1 == 'cm' and unit2 =='mm':
+                unit3 = num * 10
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'cm' and unit2 == 'm':
+                unit3 = num / 100
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'cm' and unit2 == 'in':
+                unit3 = num / 2.54
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        #-------mm---------------------------------------------------
+
+        if unit1 == 'mm' and unit2 =='cm':
+                unit3 = num / 10
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'mm' and unit2 =='m':
+                unit3 = num / 1000
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'mm' and unit2 == 'in':
+                unit3 = num / 25.4
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        #-------m---------------------------------------------------                
+
+        if unit1 == 'm' and unit2 =='cm':
+                unit3 = num * 100
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'm' and unit2 =='mm':
+                unit3 = num * 1000
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'm' and unit2 == 'in':
+                unit3 = num * 39.37
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        #-------in---------------------------------------------------
+
+        if unit1 == 'in' and unit2 =='cm':
+                unit3 = num * 2.54
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'in' and unit2 =='mm':
+                unit3 = num * 25.4
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+
+        if unit1 == 'in' and unit2 == 'm':
+                unit3 = num / 39.37
+                num = str(num)
+                num1 = str(unit3)
+                print(num+unit1,'is',num1+unit2)
+        
+                replayAnswer = replay()
+        if replayAnswer == True:
+                print("\n")
+                circle_area()
+        else:
+                print("\n")
+                unit_conversion()
+                
+def distance():
+
+        def replay():
+                REPLAY = ""
+                while REPLAY != "REPLAY" and REPLAY != "EXIT":
+                        REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+                        if REPLAY == "REPLAY":
+                                pass
+                        elif REPLAY == "EXIT":
+                                return None
+                        else:
+                                print("Invalid Input...")
+                return True
+
+        from fractions import Fraction
+
+        d = 0
+        t = 0
+
+
+        while d == 0:
+                try:
+                        d = float(input("Please input a your distance (km) that you traveled in: "))
+
+                except:
+                        if d == 0:
+                                print("Not a valid input")
+                                print("Try again")
+        while t == 0:
+                try:
+                        t = float(input("Please input the time (minutes) that it took you to travel: "))
+
+                        s = d/t
+                        s = round(s,2)
+
+                        print("---Getting the T/D---")
+                        print(t,'/',d)
+                        print("---Answer---")
+                        print('your speed is',s,'km/min')
+
+                except:
+                        if t == 0:
+                                print("Not a valid input")
+                                print("Try again")
+
+                replayAnswer = replay()
+                if replayAnswer == True:
+                        print("\n")
+                        distance()
+                else:
+                        print("\n")
+                        instructions()
+    
 def cubeVolume():
     def replay():
         REPLAY = ""
@@ -293,3 +581,259 @@ def BlackJack():
             BlackJack()
         else:
             instructions()
+
+def arearectangle():
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+
+    l = input("enter the length ")
+    w = input("enter the width ")
+    l = float(l)
+    w= float(w)
+    a = l*w
+    print(f"the area of the rectangle given is {a} ")
+
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        arearectangle()
+    else:
+        print("\n")
+        instructions()
+   
+def areatriangle():
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+
+    b = input("enter the base")
+    h = input("enter the height")
+    b = float(b)
+    h = float(h)
+    a = 0.5*b*h
+    print(f"the area of the triangle is {a} ")
+
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        areatriangle()
+    else:
+        print("\n")
+        instructions()
+
+def volumecylinder():
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+
+    import math 
+    r = input("enter radius")
+    h = input("enter in the height")
+    r = float(r)
+    h = float(h)
+    v = math.pi*r**0.5*h
+    print(f"the volume of a cylinder is {v}")
+
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        volumecylinder()
+    else:
+        print("\n")
+        instructions()
+
+def budget():
+
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+
+    h = input("what is your hourly income?")
+    m = input("what is your monthly income?")
+    r = input("how much is your monthly rent?")
+    h = float(h)
+    m = float(m)
+    r = float(r)
+    total = m - r
+    total = float(total)
+    print(f"the have {total} dollars to spend on groceries, phone, living needs,savings, etc per month ")
+    
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        budget()
+    else:
+        print("\n")
+        instructions()
+
+def numberguessing():
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True 
+
+    import random   
+
+    print("Welcome to number guessing!\nYou will get 5 attempts for easy, 7 attempts for medium and 10 attempts for hard.")
+
+    LL = False
+    while LL != True:
+        l = input("pick a level: hard ,medium or easy: ")
+        try:
+            if l == "easy" or l == "medium" or l == "hard":
+                LL = True
+        except:
+            print("Invalid input.. try again...")
+
+    if l == "easy":
+        max_number = 10
+        attempts = 5
+        LL == True
+    elif l == "medium":
+        max_number = 50
+        attempts = 7
+        LL == True
+    elif l == "hard":
+        max_number = 100
+        attempts = 10
+        LL == True
+        
+
+
+    secret_number = random.randint(1, max_number)
+    print(f"I am thinking of a number between 1 and {max_number} you have{attempts} attempts")
+
+    for attempts in range (1, attempts + 1):
+        guess = int(input("enter your guess: "))
+        if guess < secret_number:
+            print("oops! too low, try again")
+        elif guess > secret_number:
+            print("oops! too high , try again")
+        else:
+            print(f"Yay! you guessed the correct number, {secret_number} was the answer")
+            replayAnswer = replay()
+            if replayAnswer == True:
+                print("\n")
+                numberguessing()
+            else:
+                print("\n")
+                instructions()
+
+    print(f"sorry you run out of attempts the correct answer was {secret_number}")
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        numberguessing()
+    else:
+        print("\n")
+        instructions()
+
+def instructions():
+    print('Welcome to the instructions! \nIn here you will be able to get a preview of all 13 functions available to you to use. \nWhen done reading all of the options, you may chose a function to use. ')
+    print("\n")
+    print("➣1 Volume of cube: \nThis function will help you determine the volume of your cube by giving it the mesurements in meters.")
+    print("\n")
+    print("➣2 Grocery taxes: \n This function will help you calcute the subtotal, GST, PSt and total.")
+    print("\n")
+    print("➣3 Compound Interest: \nThis function will help you calculate your compound interest.")
+    print("\n")
+    print("➣4 BlackJack: \nThis is a game of BlackJack.\nThe rule to win is have a higher hand value than your opponent, without going over 21.\nPlayers are dealt two cards and can then choose to “hit” (receive additional cards) or “stand” (keep their current hand). \nYour opponent also receives two cards, but only one is face up.\nIf the player’s hand exceeds 21, they “bust” and lose the game. \nIf the opponent busts, player wins. If neither the player nor the opponent busts, the player with the highest hand value closest to 21, wins.")
+    print("\n")
+    print("➣5 Area of a rectangle: \nThis function will help you determine the area of a rectangle.")
+    print("\n")
+    print("➣6 Area of a triangle: \nThis function will help you determine the area of a triangle.")
+    print("\n")
+    print("➣7 Volume of cylinder:\nThis function will help you determine the volume of a cylinder.")
+    print("\n")
+    print("➣8 Budgeting:\nThis function will help you determine your monthly budget to spend.")
+    print("\n")
+    print("➣9 Number Guessing:\nThis is a game of number guessing. \nThere are three difficulty levels: easy, medium and hard.\nThere will be a random number for you to guess.")
+    print("\n")
+    print("➣10 Area of Circle:\nThis function will help you determine the area of a circle.")
+    print("\n")
+    print("➣11 hypotenuse finder:\nThis function will help you determing the hypotenuse of a triangle. ")
+    print("\n")
+    print("➣12 Speed Finder:\nThis function will help you determine the speed of your travelling subject.")
+    print("\n")
+    print("➣13 Unit Conversion: \nThis function will help you convert units.")
+    print("\n")
+    
+    AF = False
+    while AF != True:
+        ANSWER = input("The functions are numbered from 1-13. \nWhich funtion would you like to access? (ex: 8)")
+        try:
+            
+                ANSWER = float(ANSWER)
+                AF = True
+        except:
+            print("Invalid Entry... try again...")
+
+    if ANSWER == 1:
+        cubeVolume()
+    elif ANSWER == 2:
+        grocerytaxes()
+    elif ANSWER == 3:
+        compoundinterest()
+    elif ANSWER == 4:
+        BlackJack()
+    elif ANSWER == 5:
+        arearectangle()
+    elif ANSWER == 6:
+        areatriangle()
+    elif ANSWER == 7:
+        volumecylinder()
+    elif ANSWER == 8:
+        budget()
+    elif ANSWER == 9:
+        numberguessing()
+    elif ANSWER == 10:
+        circle_area()
+    elif ANSWER == 11:
+        right_triangle_hypotenuse_finder()
+    elif ANSWER == 12:
+        distance()
+    elif ANSWER == 13:
+        unit_conversion()
+    return None
+
+instructions()
