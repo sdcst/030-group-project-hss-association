@@ -1,6 +1,18 @@
 
 
 def arearectangle():
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+
     l = input("enter the length ")
     w = input("enter the width ")
     l = float(l)
@@ -8,17 +20,54 @@ def arearectangle():
     a = l*w
     print(f"the area of the rectangle given is {a} ")
 
+    replayAnswer = replay()
+    if replayAnswer == True:
+        print("\n")
+        arearectangle()
+    else:
+        print("\n")
+        instructions()
    
 
 def areatriangle():
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
     b = input("enter the base")
     h = input("enter the height")
     b = float(b)
     h = float(h)
     a = 0.5*b*h
     print(f"the area of the triangle is {a} ")
+replayAnswer = replay()
+if replayAnswer == True:
+    print("\n")
+    areatriangle()
+else:
+    print("\n")
+    instructions()
 
 def volumecylinder():
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+
     import math 
     r = input("enter radius")
     h = input("enter in the height")
@@ -26,10 +75,30 @@ def volumecylinder():
     h = float(h)
     v = math.pi*r**0.5*h
     print(f"the volume of a cylinder is {v}")
+    replayAnswer = replay()
+if replayAnswer == True:
+    print("\n")
+    volumecylinder()
+else:
+    print("\n")
+    instructions()
 
   
 
 def budget():
+
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
+
     h = input("what is your hourly income?")
     m = input("what is your monthly income?")
     r = input("how much is your monthly rent?")
@@ -39,8 +108,26 @@ def budget():
     total = m - r
     total = float(total)
     print(f"the have {total} dollars to spend on groceries, phone, living needs,savings, etc per month ")
+    replayAnswer = replay()
+if replayAnswer == True:
+    print("\n")
+    budget()
+else:
+    print("\n")
+    instructions()
 
 def numberguessing():
+    def replay():
+        REPLAY = ""
+        while REPLAY != "REPLAY" and REPLAY != "EXIT":
+            REPLAY = input("Do you wish to \"REPLAY\" or \"EXIT\"? ")
+            if REPLAY == "REPLAY":
+                pass
+            elif REPLAY == "EXIT":
+                return None
+            else:
+                print("Invalid Input...")
+        return True
     import random   
 
     l = input("pick a level: hard ,medium or easy")
@@ -86,4 +173,10 @@ def numberguessing():
             break
         else:
             print("invalid choice. Please choose easy, medium,hard.")
-numberguessing()
+            replayAnswer = replay()
+        if replayAnswer == True:
+            print("\n")
+            numberguessing()
+        else:
+            print("\n")
+            instructions()
