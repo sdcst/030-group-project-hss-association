@@ -1,26 +1,29 @@
-import TA
-TitleScreen()
 
 
+import FirstScreen
 
+FirstScreen.TitleScreen()
 
 i = 0
+a = False
 
-while i != 1 or 2 or 3:
+while a != True:
         try:
                 i = int(input("Input your number here: "))
                 if i == 1:
-                        print('function for menu here')         
+                        print('function for menu here')   
+                        a == True      
                 if i == 2:
                         print("function for authors here")  
+                        a == True      
                 if i == 3:
-                        quit
-                else:
-                        print("Not a valid input.")
-                        print("Try again")
+                        a == True 
+                        quit()
+
+
+
         except:
                 print("Not a valid input.")
                 print("Try again")
 
 
-#notdone
