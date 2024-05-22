@@ -12,16 +12,16 @@ def authors():
         print("- Unit Convertion")
         print("------------------------------")
         print("Fuctions by Sarah")
-        print("- Finding the Area of a Square")
+        print("- Finding the Area of a Rectangle")
         print("- Finding the Area of a Triangle")
         print("- Finding the Volume of a Cylinder")
-        print("- ")
+        print("- Budgeting")
         print("------------------------------")
         print("Fuctions by Sophie")
         print("- Finding the Volume of a Cube")
-        print("- Determining Taxes ")
-        print("- ")
-        print("- ")
+        print("- Determining Grocery Taxes ")
+        print("- Determining Compound Interest")
+        print("- Game of BlackJack")
 
 
 i = 0
