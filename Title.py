@@ -5,6 +5,8 @@ import FirstScreen
 FirstScreen.TitleScreen()
 
 def authors():
+
+
         print("Fuctions by Hassam")
         print("- Finding the Area of a Circle")
         print("- Finding Hypotenuse")
@@ -24,26 +26,33 @@ def authors():
         print("- Game of BlackJack")
 
 
+
+
+
 i = 0
 a = False
 
-while a != True:
-        try:
-                i = int(input("Input your number here: "))
-                if i == 1:
-                        #fuctions here  
-                        a == True      
-                if i == 2:
-                        authors()  
-                        a == True      
-                if i == 3:
-                        a == True 
-                        quit()
+def start_menu():
+        while a != True:
+                try:
+                        i = int(input("Input your number here: "))
+                        if i == 1:
+                                #fuctions here  
+                                a == True
+
+                        if i == 2:
+                                authors()  
+                                a == True 
+
+    
+                        if i == 3:
+                                a == True 
+                                exit()
 
 
 
-        except:
-                print("Not a valid input.")
-                print("Try again")
+                except:
+                        print("Not a valid input.")
+                        print("Try again")
 
-
+start_menu()
