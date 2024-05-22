@@ -11,6 +11,18 @@ def authors():
         print("- Finding the Speed")
         print("- Unit Convertion")
         print("------------------------------")
+        print("Fuctions by Sarah")
+        print("- Finding the Area of a Square")
+        print("- Finding the Area of a Triangle")
+        print("- Finding the Volume of a Cylinder")
+        print("- ")
+        print("------------------------------")
+        print("Fuctions by Sophie")
+        print("- Finding the Volume of a Cube")
+        print("- Determining Taxes ")
+        print("- ")
+        print("- ")
+
 
 i = 0
 a = False
