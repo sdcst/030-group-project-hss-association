@@ -1,3 +1,7 @@
+from Title import start_menu
+from FirstScreen import TitleScreen
+
+
 def circle_area():
         
         def replay():
@@ -797,12 +801,13 @@ def instructions():
     print("\n")
     print("➣13 Unit Conversion: \nThis function will help you convert units.")
     print("\n")
+    print("If you wish to exit, enter \"EXIT\".")
     
     print("The functions are numbered from 1-13. ")
     AF = False
     while AF != True:
         ANSWER = input("\nWhich funtion would you like to access? (ex: 8)")
-        if ANSWER == "1" or ANSWER == "2" or ANSWER == "3" or ANSWER == "4" or ANSWER == "5" or ANSWER == "6" or ANSWER == "7" or ANSWER == "8" or ANSWER == "9" or ANSWER == "10" or ANSWER == "11" or ANSWER == "12" or ANSWER == "13":
+        if ANSWER == "EXIT" or ANSWER == "1" or ANSWER == "2" or ANSWER == "3" or ANSWER == "4" or ANSWER == "5" or ANSWER == "6" or ANSWER == "7" or ANSWER == "8" or ANSWER == "9" or ANSWER == "10" or ANSWER == "11" or ANSWER == "12" or ANSWER == "13":
             AF = True
         else:
             print("Invalid Entry... try again...\n")
@@ -846,6 +851,8 @@ def instructions():
     elif ANSWER == "13":
         print("\n")
         unit_conversion()
+    elif ANSWER == "EXIT":
+        start_menu()
     return None
 
 instructions()
