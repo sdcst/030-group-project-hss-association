@@ -109,7 +109,6 @@ def right_triangle_hypotenuse_finder():
                 instructions()
 
 def unit_conversion():
-        
         def replay():
                 REPLAY = ""
                 while REPLAY != "REPLAY" and REPLAY != "EXIT":
@@ -257,7 +256,7 @@ def unit_conversion():
                 num1 = str(unit3)
                 print(num+unit1,'is',num1+unit2)
         
-                replayAnswer = replay()
+        replayAnswer = replay()
         if replayAnswer == True:
                 print("\n")
                 circle_area()

@@ -854,5 +854,3 @@ def instructions():
     elif ANSWER == "EXIT":
         start_menu()
     return None
-
-instructions()

@@ -23,4 +23,3 @@ def TitleScreen():
     print("I                                                        -----Press 1 to Instructions!-----                                                          I")
     print("I                                                         -----Press 2 for Authors-----                                                           I")
     print("I                                                           -----Press 3 to Quit-----                                                             I")
-
