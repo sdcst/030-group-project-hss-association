@@ -798,41 +798,53 @@ def instructions():
     print("➣13 Unit Conversion: \nThis function will help you convert units.")
     print("\n")
     
+    print("The functions are numbered from 1-13. ")
     AF = False
     while AF != True:
-        ANSWER = input("The functions are numbered from 1-13. \nWhich funtion would you like to access? (ex: 8)")
-        try:
-            
-                ANSWER = float(ANSWER)
-                AF = True
-        except:
-            print("Invalid Entry... try again...")
+        ANSWER = input("\nWhich funtion would you like to access? (ex: 8)")
+        if ANSWER == "1" or ANSWER == "2" or ANSWER == "3" or ANSWER == "4" or ANSWER == "5" or ANSWER == "6" or ANSWER == "7" or ANSWER == "8" or ANSWER == "9" or ANSWER == "10" or ANSWER == "11" or ANSWER == "12" or ANSWER == "13":
+            AF = True
+        else:
+            print("Invalid Entry... try again...\n")
 
-    if ANSWER == 1:
+    if ANSWER == "1":
+        print("\n")
         cubeVolume()
-    elif ANSWER == 2:
+    elif ANSWER == "2":
+        print("\n")
         grocerytaxes()
-    elif ANSWER == 3:
+    elif ANSWER == "3":
+        print("\n")
         compoundinterest()
-    elif ANSWER == 4:
+    elif ANSWER == "4":
+        print("\n")
         BlackJack()
-    elif ANSWER == 5:
+    elif ANSWER == "5":
+        print("\n")
         arearectangle()
-    elif ANSWER == 6:
+    elif ANSWER == "6":
+        print("\n")
         areatriangle()
-    elif ANSWER == 7:
+    elif ANSWER == "7":
+        print("\n")
         volumecylinder()
-    elif ANSWER == 8:
+    elif ANSWER == "8":
+        print("\n")
         budget()
-    elif ANSWER == 9:
+    elif ANSWER == "9":
+        print("\n")
         numberguessing()
-    elif ANSWER == 10:
+    elif ANSWER == "10":
+        print("\n")
         circle_area()
-    elif ANSWER == 11:
+    elif ANSWER == "11":
+        print("\n")
         right_triangle_hypotenuse_finder()
-    elif ANSWER == 12:
+    elif ANSWER == "12":
+        print("\n")
         distance()
-    elif ANSWER == 13:
+    elif ANSWER == "13":
+        print("\n")
         unit_conversion()
     return None
 
